@@ -19,7 +19,7 @@ app.get('/mean', (req, res, next) => {
 
     const errorDetermination = validateNumberArray(req.query.nums.split(','));
     if (errorDetermination instanceof Error) {
-        throw new ExpressError(errorDetermination.message);
+        throw new ExpressError(errorDetermination.message, 400);
     }
       
     return res.send({
@@ -36,7 +36,7 @@ app.get('/median', (req, res, next) => {
 
     const errorDetermination = validateNumberArray(req.query.nums.split(','));
     if (errorDetermination instanceof Error) {
-        throw new ExpressError(errorDetermination.message);
+        throw new ExpressError(errorDetermination.message, 400);
     }
 
     return res.send({
@@ -53,7 +53,7 @@ app.get('/mode', (req, res, next) => {
 
     const errorDetermination = validateNumberArray(req.query.nums.split(','));
     if (errorDetermination instanceof Error) {
-        throw new ExpressError(errorDetermination.message);
+        throw new ExpressError(errorDetermination.message, 400);
     }
 
     return res.send({
